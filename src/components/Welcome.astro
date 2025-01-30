@@ -1,6 +1,12 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+
+interface Props {
+	page: string;
+}
+
+const { page } = Astro.props;
 ---
 
 <div id="container">
@@ -10,7 +16,7 @@ import background from '../assets/background.svg';
 			<a href="https://astro.build"
 				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
 			>
-			<h1>
+			<h1 transition:animate="slide">
 				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
 			</h1>
 			<section id="links">
@@ -23,7 +29,11 @@ import background from '../assets/background.svg';
 						></path></svg
 					>
 				</a>
+				<a class="button" href="/">/home</a>
+				<a class="button" href="/test1">/test1</a>
+				<a class="button" href="/test2">/test2</a>
 			</section>
+			<a>{page}</a>
 		</section>
 	</main>
 
